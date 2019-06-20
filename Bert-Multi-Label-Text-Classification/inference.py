@@ -18,7 +18,8 @@ def main():
     # **************************** 基础信息 ***********************
     logger = init_logger(log_name=config['model']['arch'], log_dir=config['output']['log_dir'])
     logger.info(f"seed is {config['train']['seed']}")
-    device = 'cuda:%d' % config['train']['n_gpu'][0] if len(config['train']['n_gpu']) else 'cpu'
+    # device = 'cuda:%d' % config['train']['n_gpu'][0] if len(config['train']['n_gpu']) else 'cpu'
+    device = "cuda: 0"
     seed_everything(seed=config['train']['seed'],device=device)
     logger.info('starting load data from disk')
     id2label = {value: key for key, value in config['label2id'].items()}
