@@ -1,4 +1,4 @@
-conda install -c derickl pytorch-pretrained-bert 
+pip install pytorch-pretrained-bert 
 wget https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip -O pybert/model/pretrain/uncased_L-12_H-768_A-12.zip
 cd pybert/model/pretrain
 rm -rf uncased_L-12_H-768_A-12
