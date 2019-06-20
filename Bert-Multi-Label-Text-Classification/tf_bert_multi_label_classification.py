@@ -453,7 +453,7 @@ def main():
     output_eval_file = os.path.join("./working", "eval_results.txt")
     TRAIN_VAL_RATIO = 0.9
     MAX_SEQ_LENGTH = 128
-    BATCH_SIZE = 32
+    BATCH_SIZE = 64 # 32
     LEARNING_RATE = 2e-5
     NUM_TRAIN_EPOCHS = 1.0
     WARMUP_PROPORTION = 0.1
@@ -476,7 +476,7 @@ def main():
     train_examples = create_examples(x_train)
     # Warmup is a period of time where the learning rate
     # is small and gradually increases--usually helps training.
-    num_train_steps = int(len(train_examples) / BATCH_SIZE * NUM_TRAIN_EPOCHS)
+    num_train_steps = 100 # int(len(train_examples) / BATCH_SIZE * NUM_TRAIN_EPOCHS)
     num_warmup_steps = int(num_train_steps * WARMUP_PROPORTION)
     file_based_convert_examples_to_features(
                 train_examples, MAX_SEQ_LENGTH, tokenizer, train_file)
