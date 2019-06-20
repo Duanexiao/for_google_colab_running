@@ -551,6 +551,6 @@ def main():
     merged_df = pd.concat([x_test, output_df], axis=1)
 
 
-if __name__ == "__main":
+if __name__ == "__main__":
     main()
 
