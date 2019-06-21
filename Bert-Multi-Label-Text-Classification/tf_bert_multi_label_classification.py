@@ -536,7 +536,7 @@ def main():
     with tf.gfile.GFile(output_eval_file, "w") as writer:
         print("***** Eval results *****")
         for key in sorted(result.keys()):
-            print("  %s = %s", key, str(result[key]))
+            # print("  %s = %s", key, str(result[key]))
             writer.write("%s = %s\n" % (key, str(result[key])))
     x_test = test[:10000]  # testing a small sample
     x_test = x_test.reset_index(drop=True)
@@ -547,7 +547,7 @@ def main():
         features=test_features, seq_length=MAX_SEQ_LENGTH,
         is_training=False, drop_remainder=False, label_columns=LABEL_COLUMNS)
     predictions = estimator.predict(predict_input_fn)
-    output_df = create_output(predictions)
+    output_df = create_output(predictions, label_columns=LABEL_COLUMNS)
     merged_df = pd.concat([x_test, output_df], axis=1)
 
 
