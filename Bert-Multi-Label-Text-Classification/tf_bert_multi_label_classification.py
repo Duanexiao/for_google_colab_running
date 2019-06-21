@@ -545,7 +545,7 @@ def main():
         predict_examples, MAX_SEQ_LENGTH, tokenizer)
     predict_input_fn = input_fn_builder(
         features=test_features, seq_length=MAX_SEQ_LENGTH,
-        is_training=False, drop_remainder=False)
+        is_training=False, drop_remainder=False, label_columns=LABEL_COLUMNS)
     predictions = estimator.predict(predict_input_fn)
     output_df = create_output(predictions)
     merged_df = pd.concat([x_test, output_df], axis=1)
