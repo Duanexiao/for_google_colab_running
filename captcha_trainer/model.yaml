@@ -54,7 +54,7 @@ NeuralNet:
   RecurrentNetwork: BLSTM
   HiddenNum: 64   # 修改
   KeepProb: 0.98
-  Optimizer: AdaBound   # 修改
+  Optimizer: Momentum   # 修改
   PreprocessCollapseRepeated: False
   CTCMergeRepeated: True
   CTCBeamWidth: 1
@@ -92,7 +92,7 @@ Trains:   # 修改
   EndEpochs: 2    # 修改
   BatchSize: 128
   TestBatchSize: 300
-  LearningRate: 0.001
+  LearningRate: 0.01
   DecayRate: 0.98
   DecaySteps: 10000
 
