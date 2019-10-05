@@ -17,9 +17,9 @@ System:
 # - and set the characters to be excluded by CharExclude parameter.
 Model:
   Sites: [
-    'ALPHANUMERIC_model.pb'  # 修改
+    'ALPHANUMERIC_CNN5BLSTM-H128-150x50.pb'  # 修改
   ]
-  ModelName: ALPHANUMERIC_model    # 修改
+  ModelName: ALPHANUMERIC_CNN5BLSTM-H128-150x50    # 修改
   ModelType: 150x50           # 修改
   CharSet: ALPHANUMERIC       #验证码内容
   CharExclude: []
