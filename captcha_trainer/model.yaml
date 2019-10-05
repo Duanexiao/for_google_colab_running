@@ -78,8 +78,8 @@ NeuralNet:
 # TestBatchSize: Number of samples selected for one validation step.
 # LearningRate: Recommended value[0.01: MomentumOptimizer/AdamOptimizer, 0.001: AdaBoundOptimizer]
 Trains:   # 修改
-  TrainsPath: './dataset/ALPHANUMERIC-CNN5BLSTM-H128-150x50_trains.tfrecords'
-  TestPath: './dataset/ALPHANUMERIC-CNN5BLSTM-H128-150x50_test.tfrecords'
+  TrainsPath: './dataset/ALPHANUMERIC_LOWER-CNN5BLSTM-H128-150x50_trains.tfrecords'
+  TestPath: './dataset/ALPHANUMERIC_LOWER-CNN5BLSTM-H128-150x50_test.tfrecords'
   DatasetPath: [
     "./dataset/train_raw"
   ]
