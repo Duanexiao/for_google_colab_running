@@ -84,10 +84,10 @@ Trains:   # 修改
     "./dataset/train_raw"
   ]
   TrainRegex: '.*?(?=_)'
-  TestSetNum: 300   # 修改
+  TestSetNum: 3000   # 修改
   SavedSteps: 100
   ValidationSteps: 500
-  EndAcc: 0.95    # 修改
+  EndAcc: 0.99    # 修改
   EndCost: 0.1    # 修改
   EndEpochs: 2    # 修改
   BatchSize: 128
