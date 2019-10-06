@@ -24,7 +24,7 @@ def generate_captcha_2(sequence):
 
 
 if __name__ == "__main__":
-    generation_size = 1000#00
+    generation_size = 100000
     captcha_content = SIMPLE_CHAR_SET["ALPHANUMERIC_LOWER"]
     captcha_length = 4
     captcha_size = {"height": 40, "width": 100}
