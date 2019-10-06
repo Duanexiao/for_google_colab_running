@@ -107,7 +107,7 @@ if __name__ == '__main__':
 
     # Fill in your own sample path
     true_predict = []
-    image_dir = r"/Users/duanexiao/Downloads/yunsuo_captcha/"
+    #image_dir = r"/Users/duanexiao/Downloads/yunsuo_captcha/"
     image_dir = r"/Users/duanexiao/temp_project/for_google_colab_running/captcha_trainer/test_captcha"
     for i, p in enumerate(os.listdir(image_dir)):
         n = os.path.join(image_dir, p)
