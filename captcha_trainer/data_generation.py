@@ -28,9 +28,10 @@ if __name__ == "__main__":
     captcha_content = SIMPLE_CHAR_SET["ALPHANUMERIC_LOWER"]
     captcha_length = 4
     captcha_size = {"height": 40, "width": 100}
-    data_save_dir = "test_captcha"#"./dataset/train_raw"
+    data_save_dir = "./dataset/train_raw"
     if not os.path.exists(data_save_dir):
         os.makedirs(data_save_dir)
+    generation_size -= len(glob.glob(data_save_dir + "/*")) 
     pool = mp.Pool(processes=10)
     for i in range(generation_size):
         pool.apply(generate_captcha_2, args=(i,))
