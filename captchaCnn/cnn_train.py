@@ -169,9 +169,7 @@ def train(height=CAPTCHA_HEIGHT, width=CAPTCHA_WIDTH, y_size=len(CAPTCHA_LIST)*C
     step = 0
     while 1:
         batch_x, batch_y = next_batch(64)
-        print("step: ", step)
         sess.run(optimizer, feed_dict={x: batch_x, y: batch_y, keep_prob: 0.75})
-        print("trained")
         # 每训练一百次测试一次
         if step % 100 == 0:
             batch_x_test, batch_y_test = next_batch(100)
