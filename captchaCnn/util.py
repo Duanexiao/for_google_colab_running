@@ -47,7 +47,7 @@ def vec2text(vec, captcha_list=CAPTCHA_LIST, size=CAPTCHA_LEN):
     return ''.join(text_list)
 
 
-def wrap_gen_captcha_text_and_image(shape=(60, 160, 3)):
+def wrap_gen_captcha_text_and_image(shape=(40, 100, 3)):  # 修改
     '''
     返回特定shape图片
     :param shape:
