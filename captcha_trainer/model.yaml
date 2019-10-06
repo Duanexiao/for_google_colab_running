@@ -17,9 +17,9 @@ System:
 # - and set the characters to be excluded by CharExclude parameter.
 Model:
   Sites: [
-    'ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40.pb'  # 修改
+    'ALPHANUMERIC_LOWER-CNN5BGRU-H128-100x40.pb'  # 修改
   ]
-  ModelName: ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40    # 修改
+  ModelName: ALPHANUMERIC_LOWER-CNN5BGRU-H128-100x40    # 修改
   ModelType: 100x40           # 修改
   CharSet: ALPHANUMERIC_LOWER       #验证码内容
   CharExclude: []
@@ -51,7 +51,7 @@ Pretreatment:
 # - [AdaBound, Adam, Momentum]
 NeuralNet:
   CNNNetwork: CNN5
-  RecurrentNetwork: BLSTM
+  RecurrentNetwork: BGRU
   HiddenNum: 64   # 修改
   KeepProb: 0.98
   Optimizer: Momentum   # 修改
@@ -78,13 +78,13 @@ NeuralNet:
 # TestBatchSize: Number of samples selected for one validation step.
 # LearningRate: Recommended value[0.01: MomentumOptimizer/AdamOptimizer, 0.001: AdaBoundOptimizer]
 Trains:   # 修改
-  TrainsPath: './dataset/ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40_trains.tfrecords'
-  TestPath: './dataset/ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40_test.tfrecords'
+  TrainsPath: './dataset/ALPHANUMERIC_LOWER-CNN5BGRU-H128-100x40_trains.tfrecords'
+  TestPath: './dataset/ALPHANUMERIC_LOWER-CNN5BGRU-H128-100x40_test.tfrecords'
   DatasetPath: [
     "./dataset/train_raw"
   ]
   TrainRegex: '.*?(?=_)'
-  TestSetNum: 3000   # 修改
+  TestSetNum: 1000   # 修改
   SavedSteps: 100
   ValidationSteps: 500
   EndAcc: 0.99    # 修改
