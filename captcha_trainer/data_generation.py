@@ -6,7 +6,7 @@ from captcha.image import ImageCaptcha
 from character import *
 
 
-generation_size = 20000
+generation_size = 100000
 captcha_content = SIMPLE_CHAR_SET["ALPHANUMERIC"]
 captcha_length = 4
 captcha_size = {"height": 50, "width": 150}
