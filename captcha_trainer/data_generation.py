@@ -17,9 +17,9 @@ def generate_captcha(sequence):
 
 if __name__ == "__main__":
     generation_size = 100000
-    captcha_content = SIMPLE_CHAR_SET["ALPHANUMERIC"]
+    captcha_content = SIMPLE_CHAR_SET["ALPHANUMERIC_LOWER"]
     captcha_length = 4
-    captcha_size = {"height": 50, "width": 150}
+    captcha_size = {"height": 40, "width": 100}
     data_save_dir = "./dataset/train_raw"
     if not os.path.exists(data_save_dir):
         os.makedirs(data_save_dir)

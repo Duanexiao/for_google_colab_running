@@ -11,6 +11,7 @@ from config import *
 from constants import RunMode
 from pretreatment import preprocessing
 from framework import GraphOCR
+import matplotlib.pyplot as plt
 
 
 def get_image_batch(img_bytes):
@@ -105,7 +106,9 @@ if __name__ == '__main__':
     sess.graph.finalize()
 
     # Fill in your own sample path
-    image_dir = r"E:\Task\Trains\****"
+    true_predict = []
+    image_dir = r"/Users/duanexiao/Downloads/yunsuo_captcha/"
+    image_dir = r"/Users/duanexiao/temp_project/for_google_colab_running/captcha_trainer/test_captcha"
     for i, p in enumerate(os.listdir(image_dir)):
         n = os.path.join(image_dir, p)
         if i > 1000:
@@ -120,6 +123,8 @@ if __name__ == '__main__':
             dense_decoded_op,
             x_op,
         )
-
-        print(i, p, predict_text)
-
+        true_label = p.split("_")[0].lower()
+        if predict_text == true_label:
+            true_predict.append(i)
+        #print(i, p, predict_text)
+    print(len(true_predict))

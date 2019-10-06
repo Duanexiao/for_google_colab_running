@@ -17,15 +17,15 @@ System:
 # - and set the characters to be excluded by CharExclude parameter.
 Model:
   Sites: [
-    'ALPHANUMERIC-ResNetBLSTM-H128-150x50.pb'  # 修改
+    'ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40.pb'  # 修改
   ]
-  ModelName: ALPHANUMERIC-ResNetBLSTM-H128-150x50    # 修改
-  ModelType: 150x50           # 修改
-  CharSet: ALPHANUMERIC       #验证码内容
+  ModelName: ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40    # 修改
+  ModelType: 100x40           # 修改
+  CharSet: ALPHANUMERIC_LOWER       #验证码内容
   CharExclude: []
   CharReplace: {}
-  ImageWidth: 150      # 修改
-  ImageHeight: 50      # 修改
+  ImageWidth: 100      # 修改
+  ImageHeight: 40      # 修改
 
 # Binaryzation: [-1: Off, >0 and < 255: On].
 # Smoothing: [-1: Off, >0: On].
@@ -39,7 +39,7 @@ Pretreatment:
   Binaryzation: -1
   Smoothing: -1
   Blur: -1
-  Resize: [150, 50]   # 修改, 模型训练时的图片width, height
+  Resize: [100, 40]   # 修改, 模型训练时的图片width, height
   ReplaceTransparent: True
 
 # CNNNetwork: [CNN5, ResNet, DenseNet]
@@ -50,9 +50,9 @@ Pretreatment:
 # Optimizer: Loss function algorithm for calculating gradient.
 # - [AdaBound, Adam, Momentum]
 NeuralNet:
-  CNNNetwork: ResNet
+  CNNNetwork: CNN5
   RecurrentNetwork: BLSTM
-  HiddenNum: 128   # 修改
+  HiddenNum: 64   # 修改
   KeepProb: 0.98
   Optimizer: Momentum   # 修改
   PreprocessCollapseRepeated: False
@@ -78,16 +78,16 @@ NeuralNet:
 # TestBatchSize: Number of samples selected for one validation step.
 # LearningRate: Recommended value[0.01: MomentumOptimizer/AdamOptimizer, 0.001: AdaBoundOptimizer]
 Trains:   # 修改
-  TrainsPath: './dataset/ALPHANUMERIC-ResNetBLSTM-H128-150x50_trains.tfrecords'
-  TestPath: './dataset/ALPHANUMERIC-ResNetBLSTM-H128-150x50_test.tfrecords'
+  TrainsPath: './dataset/ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40_trains.tfrecords'
+  TestPath: './dataset/ALPHANUMERIC_LOWER-CNN5BLSTM-H128-100x40_test.tfrecords'
   DatasetPath: [
     "./dataset/train_raw"
   ]
   TrainRegex: '.*?(?=_)'
-  TestSetNum: 5000   # 修改
+  TestSetNum: 3000   # 修改
   SavedSteps: 100
   ValidationSteps: 500
-  EndAcc: 0.98    # 修改
+  EndAcc: 0.99    # 修改
   EndCost: 0.1    # 修改
   EndEpochs: 2    # 修改
   BatchSize: 128
