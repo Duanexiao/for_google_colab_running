@@ -1,4 +1,6 @@
 import tensorflow as tf
+from PIL import Image
+import numpy as np
 from cnn_train import cnn_graph
 from captcha_gen import gen_captcha_text_and_image
 from util import vec2text, convert2gray
@@ -26,13 +28,17 @@ def captcha2text(image_list, height=CAPTCHA_HEIGHT, width=CAPTCHA_WIDTH):
         text_list = [vec2text(vector) for vector in vector_list]
         return text_list
 
-if __name__ == '__main__':
-    text, image = gen_captcha_text_and_image()
-    plt.figure('color')
-    plt.imshow(image, cmap='gray')
 
-    plt.axis('off')
-    plt.show()
+
+if __name__ == '__main__':
+    #text, image = gen_captcha_text_and_image()
+    filename = "yunsuo_007c1f76-0f85-480f-ac21-aa5573ee1702.png"
+    text, image = "test", np.array(Image.open("/Users/duanexiao/Downloads/yunsuo_captcha/{0}".format(filename)))
+    #plt.figure('color')
+    #plt.imshow(image, cmap='gray')
+
+    #plt.axis('off')
+    #plt.show()
     image = convert2gray(image)
     image = image.flatten() / 255
 
