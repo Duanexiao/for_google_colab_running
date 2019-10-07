@@ -49,7 +49,8 @@ def gene_code():
     # image = image.transform((width+30,height+10), Image.AFFINE, (1,-0.3,0,-0.1,1,0),Image.BILINEAR)  #创建扭曲
     #image = image.transform((width+20,height+10), Image.AFFINE, (1,-0.3,0,-0.1,1,0),Image.BILINEAR)  #创建扭曲
     #image = image.filter(ImageFilter.EDGE_ENHANCE_MORE) #滤镜，边界加强
-    image.save('idencode.png') #保存验证码图片
+    #image.save('idencode.png') #保存验证码图片
+    return image
 if __name__ == "__main__":
     generation_size = 10000
     gene_code()
